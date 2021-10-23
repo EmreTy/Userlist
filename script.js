@@ -17,16 +17,19 @@ function newUser() {
     leeresArray.push(combinedData);
     console.log(leeresArray);
     renderUsers();
+    ageNumber.value = "";
+    nameText.value = "";
   } else {
     alert("Füllen sie die Felder aus!!");
   }
-}
 
-function renderUsers() {
-  const list = document.getElementById("user-list");
-  leeresArray.forEach((user) => {
-    const userList = document.createElement("li");
-    userList.innerText = ${user.name}, ${user.age};
-    list.appendChild(userList);
-  });
+  function renderUsers() {
+    const list = document.getElementById("user-list");
+    list.innerText = "";
+    leeresArray.forEach((user) => {
+      const userList = document.createElement("li");
+      userList.innerText = `${user.name}, ${user.age}`;
+      list.appendChild(userList);
+    });
+  }
 }
